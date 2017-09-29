@@ -93,28 +93,4 @@ function validateInput(keyEvent) {
     }
 }
 
-// Get user input
-// document.onkeyup = function(event) {
-//     var incorrectLetters = [];
-//     if (validateInput(event))
-//     {
-//         for (var index = 0; index < numberOfLetters; index++) {
-//             var currentLetter = randomWord[index];
-//             if (event.key.toLowerCase() == currentLetter) {
-//                 document.getElementById("randomWordLetter" + index).innerText = currentLetter + "  ";
-//             }
-//             else {
-//                 document.getElementById("incorrectLetters").innerHTML += event.key.toLowerCase();
-//             }
-//         }
-
-//     }
-//     else {
-//         console.log("Oh you messed up!");
-//     }
-
-
-// }
-
-
 

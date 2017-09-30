@@ -1,3 +1,22 @@
-div {
+#headerImage {
+    margin: auto;
+    height: 200px;
+}
+
+.randomWordLetters {
     display: inline;
+}
+
+.borders {
+    border: 2px dashed black;
+    height: 650px;
+    text-align: center;
+}
+
+#musicName {
+    text-align: center;
+}
+
+#discImage {
+   padding-top: 50px;
 }

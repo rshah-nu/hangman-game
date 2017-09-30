@@ -9,6 +9,10 @@ function randomizeChoice(myArray){
     return choice.toLowerCase();
 }
 
+// Stores guessesRemaining
+var guessesRemaining = 12;
+// Stores total user wins
+var wins = 0;
 // Stores returned random choice to a global var.
 var randomWord = randomizeChoice(wordArray);
 // DEBUG
@@ -33,7 +37,7 @@ for (var index = 0; index < numberOfLetters; index++) {
     // DEBUG
     console.log(div);
     // Append the Divs to the "Container" div
-    document.getElementById("container").appendChild(div);
+    document.getElementById("currentWord").appendChild(div);
     // Set the inner text of the Divs to "_ "
     div.innerText = "___  ";
 }
@@ -74,13 +78,13 @@ document.onkeyup = function(event) {
             // ELSE, if user's chosen word has NOT been already selected AND does not exist in the random word, append the user's choice to the page's "IncorrectLetters div"
             else {
                 document.getElementById("incorrectLetters").innerText += userChoice;
+                guessesRemaining--;
             }
         }
     }
 }
 
-// Functoin to validate user input
-// TODO: Ensure key hasn't been pressed already
+// Function to validate user input
 function validateInput(keyEvent) {
     // DEBUG
     console.log(event);

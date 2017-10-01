@@ -1,7 +1,8 @@
 // Global Variable Declarations
 
 // Variable to store random words to guess in an array
-var wordArray = ["Sample", "Double", "Length", "Drops", "Elton", "Dog", "Table", "Awning", "Jeans", "Chalk", "Plants", "Ozone"];
+// var wordArray = ["Yesterday", "Blackbird", "Length", "Drops", "Elton", "Dog", "Table", "Awning", "Jeans", "Chalk", "Plants", "Ozone"];
+var wordArray = ["Yesterday I Saw"];
 // Maximum guesses available
 var guessesRemaining = 12;
 // User wins total
@@ -10,6 +11,9 @@ var userWins;
 var randomWord = randomChoice(wordArray);
 // Store already guessed letters in an array
 var alreadyChosenLetters = [];
+// Variable to store correct letters to later check if user won or not
+var correctLetters;
+
 
 // Function to return a random item in lower case from any passed array
 function randomChoice(myArray) {
@@ -17,9 +21,12 @@ function randomChoice(myArray) {
     return randomChoice.toLowerCase();
 }
 
+// Call to function to print underscores to page
 displayUnderscores(randomWord);
 
+// Get user input and validate  / check for similarity between random word
 document.onkeyup = function(event){
+    console.log(event);
     if (validateInput(event)) {
         var userChoice = event.key.toLowerCase();
         if (checkRepeats(userChoice) == false) {
@@ -77,7 +84,7 @@ function checkContains(userChoice1_) {
         }
     }
     else {
-        document.getElementById("incorrectLetters").innerText += userChoice1_;
+        document.getElementById("incorrectLetters").innerHTML += "<h2>" + " " + userChoice1_ + "," + "</h2>";
         guessesRemaining--;
     }
 }

@@ -20,3 +20,7 @@
 #discImage {
    padding-top: 50px;
 }
+
+#incorrectLetters h2 {
+    display: inline;
+}
